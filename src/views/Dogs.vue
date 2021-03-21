@@ -1,6 +1,6 @@
 <template>
   <div class="dogs">
-    <h1>This is the Dog page</h1>
+    <h1>Dogs</h1>
     <table>
       <tr>
         <th>Name</th>

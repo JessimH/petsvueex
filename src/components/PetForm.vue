@@ -36,7 +36,7 @@ export default {
     },
     computed: {
         countPets() {
-        return this.$store.getters.countPets;
+            return this.$store.getters.countPets;
         }
   },
 }

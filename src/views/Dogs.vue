@@ -1,18 +1,18 @@
 <template>
   <div class="dogs">
-    <h1>Dogs</h1>
+    <h1>Chiens 🐶</h1>
     <table>
       <tr>
-        <th>Name</th>
-        <th>BirthYear</th>
-        <th>Species</th>
+        <th>Nom</th>
+        <th>Année de naissance</th>
+        <th>Espèce</th>
       </tr>
       <tr v-for="dog in dogs" :key='dog.id'>
         <td>
           <router-link :to="{name: 'Pets', params: { specie: dog.species, id: dog.id },}"> {{ dog.name }} </router-link>
         </td>
         <td>{{dog.birthYear}}</td>
-        <td>{{dog.species}}</td>
+        <td>{{dog.species}} 🐶</td>
       </tr>
     </table>
 

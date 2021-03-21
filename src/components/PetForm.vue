@@ -1,16 +1,17 @@
 <template>
     <div>
+        <p v-if="message">{{message}}</p>
         <div class="form">
-            <label for="name">Name:</label>
+            <label for="name">Nom:</label>
             <input type="text" name="name" placeholder="Enter name" v-model="pet.name">
-            <label for="pets">Choose species:</label>
+            <label for="pets">Choisissez une espèce:</label>
             <select name="pets" id="pet-select" v-model="pet.species">
-                <option value="Dog">Dog</option>
-                <option value="Cat">Cat</option>
+                <option value="Dog">Chien🐶</option>
+                <option value="Cat">Chat🐱</option>
             </select>
-            <label for="birthYear">BirthYear:</label>
+            <label for="birthYear">Année de naissance:</label>
             <input type="number" name="birthYear" placeholder="2021" v-model="pet.birthYear">
-            <input @click="addPet" type="submit" value="Submit">
+            <input @click="addPet" type="submit" value="Ajouter un nouvel animal">
         </div>
     </div>
 </template>
@@ -25,13 +26,19 @@ export default {
                 species: null,
                 birthYear: null,
             },
+            message: null
         }
     },
     methods: {
         addPet(){
-            this.pet.id = Math.floor(Math.random() * (100 - this.countPets) + 1)
-            // console.log(this.pet.id)
-            this.$store.commit("addPet", this.pet);
+            if(this.pet.name == null || this.pet.species == null || this.pet.birthYear == null){
+                this.message = "remplissez tout les champs !"
+            }else{
+                this.pet.id = Math.floor(Math.random() * (100 - this.countPets) + 1)
+                // console.log(this.pet.id)
+                this.$store.commit("addPet", this.pet);
+                this.message = "votre compagnon à été ajouté"
+            }
         }
     },
     computed: {

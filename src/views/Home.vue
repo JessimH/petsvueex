@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Adopt a Pet</h1>
+    <h1>Adoptez un animal 🐶🐱</h1>
     <DashBoard />
   </div>
 </template>

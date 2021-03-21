@@ -2,10 +2,10 @@
     <div>
         <h2>DashBord</h2>
         <div>
-            <p>{{countPets}} pet{{ countPets > 1 ? 's' : ''}} in the databases</p>
+            <p>{{countPets}} anim{{ countPets > 1 ? 'aux' : 'al'}} dans la base de données</p>
             <ul>
-                <li>{{countCats}} cat{{countCats > 1 ? 's' : ''}}</li>
-                <li>{{countDogs}} dog{{countDogs > 1 ? 's' : ''}}</li>
+                <li>{{countCats}} chat{{countCats > 1 ? 's' : ''}} 🐱</li>
+                <li>{{countDogs}} chien{{countDogs > 1 ? 's' : ''}} 🐶</li>
             </ul>
             <button @click="toggleForm">{{formBoolean ? 'close form' : 'Add new pet'}}</button>
         </div>

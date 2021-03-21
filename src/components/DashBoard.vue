@@ -7,7 +7,7 @@
                 <li>{{countCats}} chat{{countCats > 1 ? 's' : ''}} 🐱</li>
                 <li>{{countDogs}} chien{{countDogs > 1 ? 's' : ''}} 🐶</li>
             </ul>
-            <button @click="toggleForm">{{formBoolean ? 'close form' : 'Add new pet'}}</button>
+            <button @click="toggleForm">{{formBoolean ? 'Fermer le formulaire' : 'Ajouter un nouvel animal'}}</button>
         </div>
         <PetForm 
             v-if="formBoolean"

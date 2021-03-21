@@ -7,10 +7,10 @@
                 <li>{{countCats}} cat{{countCats > 1 ? 's' : ''}}</li>
                 <li>{{countDogs}} dog{{countDogs > 1 ? 's' : ''}}</li>
             </ul>
-            <button @click="toggleForm">{{newpet ? 'close form' : 'Add new pet'}}</button>
+            <button @click="toggleForm">{{formBoolean ? 'close form' : 'Add new pet'}}</button>
         </div>
         <PetForm 
-            v-if="newpet"
+            v-if="formBoolean"
         />
     </div>
 </template>
@@ -23,13 +23,13 @@ export default {
     },
     data: () => {
         return{
-            newpet: false,
+            formBoolean: false,
         }
     },
     methods: {
         toggleForm(){
-            console.log(this.newpet)
-            this.newpet = !this.newpet
+            // console.log(this.newpet)
+            this.formBoolean = !this.formBoolean
         }
     },
     computed: {

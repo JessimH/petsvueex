@@ -29,9 +29,15 @@ export default {
     },
     methods: {
         addPet(){
-            this.pet.id = Math.floor(Math.random() * (100 - this.$store.countPets) + 1)
+            this.pet.id = Math.floor(Math.random() * (100 - this.countPets) + 1)
+            // console.log(this.pet.id)
             this.$store.commit("addPet", this.pet);
         }
     },
+    computed: {
+        countPets() {
+        return this.$store.getters.countPets;
+        }
+  },
 }
 </script>
